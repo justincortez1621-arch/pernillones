@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pernilones La Calera - ¡El sabor que te hace cantar!</title>
+    <!-- Tailwind CSS para un diseño rápido y moderno -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts para una tipografía más animada -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .font-titulo { font-family: 'Lilita One', cursive; }
+        .font-cuerpo { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Animación personalizada para el botón flotante de WhatsApp */
+        @keyframes pulse-green {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        .animate-whatsapp {
+            animation: pulse-green 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-orange-50 text-stone-800 font-cuerpo antialiased relative">
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP ANIMADO -->
+    <a href="https://api.whatsapp.com/send?phone=573134178751&text=%C2%A1Hola%21+Tengo+una+duda+sobre+el+men%C3%BA+o+los+domicilios...+%F0%9F%90%A5" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-emerald-600 transition-all hover:-translate-y-1 active:scale-95 animate-whatsapp"
+       title="¿Dudas? Escríbenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Encabezado / Hero Animado -->
+    <header class="bg-linear-to-r from-amber-500 via-orange-500 to-red-600 text-white text-center py-14 px-4 shadow-xl relative overflow-hidden">
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-2xl"></div>
+        
+        <h1 class="text-4xl md:text-6xl font-titulo tracking-wide drop-shadow-md animate-bounce mb-2">
+            🍗 PERNILONES LA CALERA 🐥
+        </h1>
+        <p class="text-xl md:text-2xl font-bold text-yellow-100 drop-shadow-xs">¡El sabor más tierno y crujiente a la brasa!</p>
+        <span class="inline-block mt-4 bg-yellow-400 text-red-900 font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+            🔥 Domicilios Activos 🔥
+        </span>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Sección del Menú -->
+        <section class="lg:col-span-2 space-y-8">
+            
+            <!-- CATEGORÍA: PLATOS FUERTES -->
+            <div>
+                <h2 class="text-3xl font-titulo pb-2 mb-6 text-orange-600 flex items-center gap-2 border-b-4 border-yellow-400">
+                    <i class="fas fa-fire text-red-500"></i> Platos Fuertes Pernilones
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Pollo Entero -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 hover:border-orange-300 transition-all flex items-center justify-between gap-4">
+                        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=150&q=80" alt="Pollo Asado" class="w-20 h-20 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-lg text-stone-900">Pollo Asado Entero</h3>
+                            <p class="text-xs text-stone-500 mb-1">Papas, plátano, arepas y ají</p>
+                            <span class="text-orange-600 font-extrabold text-lg">$34.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('pollo-entero', -1, 34000, 'Pollo Asado Entero')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">-</button>
+                            <span id="cant-pollo-entero" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('pollo-entero', 1, 34000, 'Pollo Asado Entero')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Medio Pollo -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 hover:border-orange-300 transition-all flex items-center justify-between gap-4">
+                        <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=150&q=80" alt="Medio Pollo" class="w-20 h-20 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-lg text-stone-900">Medio Pollo Asado</h3>
+                            <p class="text-xs text-stone-500 mb-1">Con papitas y arepa</p>
+                            <span class="text-orange-600 font-extrabold text-lg">$18.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('medio-pollo', -1, 18000, 'Medio Pollo Asado')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">-</button>
+                            <span id="cant-medio-pollo" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('medio-pollo', 1, 18000, 'Medio Pollo Asado')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Picada Familiar -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 hover:border-orange-300 transition-all flex items-center justify-between gap-4">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=150&q=80" alt="Picada" class="w-20 h-20 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-lg text-stone-900">Picada Pernilones (Familiar)</h3>
+                            <p class="text-xs text-stone-500 mb-1">Res, cerdo, chicharrón, papa y platano</p>
+                            <span class="text-orange-600 font-extrabold text-lg">$65.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('picada', -1, 65000, 'Picada Pernilones')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">-</button>
+                            <span id="cant-picada" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('picada', 1, 65000, 'Picada Pernilones')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Churrasco -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 hover:border-orange-300 transition-all flex items-center justify-between gap-4">
+                        <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=150&q=80" alt="Churrasco" class="w-20 h-20 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-lg text-stone-900">Churrasco de Res</h3>
+                            <p class="text-xs text-stone-500 mb-1">350g a la brasa con papas francesas</p>
+                            <span class="text-orange-600 font-extrabold text-lg">$32.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('churrasco', -1, 32000, 'Churrasco')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">-</button>
+                            <span id="cant-churrasco" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('churrasco', 1, 32000, 'Churrasco')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white transition shadow-xs">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORÍA: ACOMPAÑAMIENTOS Y PORCIONES -->
+            <div>
+                <h2 class="text-3xl font-titulo pb-2 mb-6 text-orange-600 flex items-center gap-2 border-b-4 border-yellow-400">
+                    <i class="fas fa-cheese text-amber-500"></i> Agrégale Algo Más a tu Pedido
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Papa Criolla -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Porción de Papa Criolla</h3>
+                            <span class="text-orange-600 font-extrabold">$6.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('papas-criollas', -1, 6000, 'Porción Papa Criolla')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-papas-criollas" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('papas-criollas', 1, 6000, 'Porción Papa Criolla')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+                    <!-- Papa Francesa -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Porción de Papa Francesa</h3>
+                            <span class="text-orange-600 font-extrabold">$7.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('papas-francesa', -1, 7000, 'Porción Papa Francesa')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-papas-francesa" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('papas-francesa', 1, 7000, 'Porción Papa Francesa')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+                    <!-- Plátano con Queso -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Plátano con Queso y Bocadillo</h3>
+                            <span class="text-orange-600 font-extrabold">$8.500</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('platano', -1, 8500, 'Plátano c/ Queso')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-platano" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('platano', 1, 8500, 'Plátano c/ Queso')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+                    <!-- Chorizo -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Porción de Chorizo (4 und)</h3>
+                            <span class="text-orange-600 font-extrabold">$9.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('chorizo', -1, 9000, 'Porción Chorizo')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-chorizo" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('chorizo', 1, 9000, 'Porción Chorizo')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORÍA: GASEOSAS Y BEBIDAS -->
+            <div>
+                <h2 class="text-3xl font-titulo pb-2 mb-6 text-orange-600 flex items-center gap-2 border-b-4 border-yellow-400">
+                    <i class="fas fa-beer text-yellow-500"></i> Bebidas Refrescantes
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Gaseosa Familiar 1.5L -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Gaseosa 1.5 Litros</h3>
+                            <p class="text-xs text-stone-500">Coca-Cola / Postobón</p>
+                            <span class="text-orange-600 font-extrabold">$7.500</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('gas-familiar', -1, 7500, 'Gaseosa 1.5L')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-gas-familiar" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('gas-familiar', 1, 7500, 'Gaseosa 1.5L')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Gaseosa Mega 2.5L -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Gaseosa Mega 2.5 Litros</h3>
+                            <p class="text-xs text-stone-500">Ideal para toda la familia</p>
+                            <span class="text-orange-600 font-extrabold">$10.500</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('gas-mega', -1, 10500, 'Gaseosa 2.5L')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-gas-mega" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('gas-mega', 1, 10500, 'Gaseosa 2.5L')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Gaseosa Personal -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Gaseosa Personal</h3>
+                            <p class="text-xs text-stone-500">Bien fría</p>
+                            <span class="text-orange-600 font-extrabold">$3.500</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('gas-personal', -1, 3500, 'Gaseosa Personal')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-gas-personal" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('gas-personal', 1, 3500, 'Gaseosa Personal')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Jarra Jugo -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-orange-100 flex items-center justify-between gap-4">
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-stone-900">Jarra de Jugo Natural</h3>
+                            <p class="text-xs text-stone-500">Lulo, Maracuyá o Mango</p>
+                            <span class="text-orange-600 font-extrabold">$12.000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cambiarCantidad('jugo-jarra', -1, 12000, 'Jarra Jugo')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">-</button>
+                            <span id="cant-jugo-jarra" class="w-4 text-center font-bold text-lg">0</span>
+                            <button onclick="cambiarCantidad('jugo-jarra', 1, 12000, 'Jarra Jugo')" class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full font-black hover:bg-orange-500 hover:text-white text-sm">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Sección de Pedido y Facturación -->
+        <section class="bg-white p-6 rounded-3xl shadow-xl border-2 border-orange-100 h-fit sticky top-6 text-stone-800">
+            
+            <!-- BANNER DE PAGOS NEQUI -->
+            <div class="bg-linear-to-r from-purple-700 via-purple-600 to-pink-500 text-white p-3 rounded-2xl shadow-xs mb-5 flex items-center gap-3">
+                <div class="bg-white p-1.5 rounded-xl w-10 h-10 flex items-center justify-center font-black text-purple-700 text-xs tracking-tighter shrink-0 shadow-sm font-titulo">
+                    NEQUI
+                </div>
+                <div class="text-left">
+                    <p class="text-xs font-black uppercase tracking-wider text-pink-100">¡Paga fácil desde casa!</p>
+                    <p class="text-sm font-extrabold font-mono">Cel: 313 4178751</p>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-titulo text-stone-900 mb-4 pb-2 border-b-2 border-dashed border-stone-200 flex items-center gap-2">
+                <i class="fas fa-shopping-basket text-orange-500"></i> Tu Pedido
+            </h2>
+            
+            <!-- Resumen de items seleccionados -->
+            <div id="resumen-pedido" class="space-y-3 min-h-[100px] text-stone-600 text-sm mb-4">
+                <p class="text-center text-stone-400 py-4">No has seleccionado ningún producto aún.</p>
+            </div>
+
+            <!-- Formulario de datos -->
+            <div class="space-y-3 border-t-2 border-dashed border-stone-200 pt-4 mb-4">
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase mb-1">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-sm focus:outline-hidden focus:border-orange-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase mb-1">Dirección de Entrega</label>
+                    <input type="text" id="direccion" placeholder="Ej. Calle 10 #24-12" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-sm focus:outline-hidden focus:border-orange-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-500 uppercase mb-1">Notas / Indicaciones</label>
+                    <input type="text" id="notas" placeholder="Ej. Sin ají, gaseosa de naranja..." class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-sm focus:outline-hidden focus:border-orange-500">
+                </div>
+            </div>
+
+            <!-- Totalizador -->
+            <div class="bg-orange-50 p-4 rounded-2xl flex items-center justify-between mb-4">
+                <span class="font-bold text-stone-700">Total a Pagar:</span>
+                <span id="total-pedido" class="text-2xl font-black text-orange-600">$0</span>
+            </div>
+
+            <!-- Botón de Envío -->
+            <button onclick="enviarPedido()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 px-4 rounded-2xl shadow-md hover:shadow-xl transition-all flex items-center justify-center gap-2 text-lg active:scale-98">
+                <i class="fab fa-whatsapp text-xl"></i> Enviar Pedido por WhatsApp
+            </button>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-900 text-stone-400 text-center py-8 mt-12 text-sm border-t-4 border-orange-500">
+        <p class="font-bold text-white mb-1">🔥 Pernilones La Calera 🔥</p>
+        <p>Calidad, sabor y economía en tu mesa.</p>
+        <p class="text-xs mt-4 opacity-50">&copy; 2026 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- LÓGICA DE CONTROL DEL CARRITO -->
+    <script>
+        let pedido = {};
+
+        function cambiarCantidad(id, cambio, precio, nombre) {
+            if (!pedido[id]) {
+                pedido[id] = { cantidad: 0, precio: precio, nombre: nombre };
+            }
+
+            pedido[id].cantidad += cambio;
+
+            if (pedido[id].cantidad <= 0) {
+                pedido[id].cantidad = 0;
+                delete pedido[id];
+            }
+
+            // Actualizar el número en la interfaz
+            const elCant = document.getElementById(`cant-${id}`);
+            if (elCant) elCant.innerText = pedido[id] ? pedido[id].cantidad : 0;
+
+            actualizarResumen();
+        }
+
+        function actualizarResumen() {
+            const contenedor = document.getElementById('resumen-pedido');
+            const elTotal = document.getElementById('total-pedido');
+            contenedor.innerHTML = '';
+            
+            let total = 0;
+            const keys = Object.keys(pedido);
+
+            if (keys.length === 0) {
+                contenedor.innerHTML = '<p class="text-center text-stone-400 py-4">No has seleccionado ningún producto aún.</p>';
+                elTotal.innerText = '$0';
+                return;
+            }
+
+            keys.forEach(key => {
+                const item = pedido[key];
+                const subtotal = item.cantidad * item.precio;
+                total += subtotal;
+
+                contenedor.innerHTML += `
+                    <div class="flex justify-between items-center bg-stone-50 p-2 rounded-xl border border-stone-100">
+                        <div>
+                            <span class="font-bold text-stone-800">${item.cantidad}x</span> ${item.nombre}
+                        </div>
+                        <span class="font-bold text-stone-700">$${subtotal.toLocaleString('es-CO')}</span>
+                    </div>
+                `;
+            });
+
+            elTotal.innerText = `$${total.toLocaleString('es-CO')}`;
+        }
+
+        function enviarPedido() {
+            if (Object.keys(pedido).length === 0) {
+                alert('¡Por favor agrega al menos un producto a tu pedido!');
+                return;
+            }
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const direccion = document.getElementById('direccion').value.trim();
+            const notas = document.getElementById('notas').value.trim();
+
+            if (!nombre || !direccion) {
+                alert('Por favor ingresa tu Nombre y Dirección para el envío.');
+                return;
+            }
+
+            let mensaje = `🔥 *NUEVO PEDIDO - PERNILONES LA CALERA* 🔥\n\n`;
+            mensaje += `👤 *Cliente:* ${nombre}\n`;
+            mensaje += `📍 *Dirección:* ${direccion}\n`;
+            if(notas) mensaje += `📝 *Notas:* ${notas}\n`;
+            mensaje += `\n🛒 *DETALLE DEL PEDIDO:*\n`;
+
+            let total = 0;
+            Object.keys(pedido).forEach(key => {
+                const item = pedido[key];
+                const subtotal = item.cantidad * item.precio;
+                total += subtotal;
+                mensaje += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
+            });
+
+            mensaje += `\n💰 *TOTAL A PAGAR:* $${total.toLocaleString('es-CO')}\n\n`;
+            mensaje += `Muchas gracias, ¡espero mi confirmación! 🍗🐥`;
+
+            // Enlace de WhatsApp directo con el nuevo número 313 4178751
+            const numeroWhatsApp = "573134178751"; 
+            const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
